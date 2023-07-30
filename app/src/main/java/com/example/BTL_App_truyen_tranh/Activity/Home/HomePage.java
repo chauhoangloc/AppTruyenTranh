@@ -1,9 +1,8 @@
 package com.example.BTL_App_truyen_tranh.GUI.Home;
 
-import static com.example.BTL_App_truyen_tranh.DAO.TheLoaiDAO.getall_tl;
-import static com.example.BTL_App_truyen_tranh.DAO.TruyenTranhDao.getall_tt;
-import static com.example.BTL_App_truyen_tranh.DAO.TruyenTranhDao.timkiem_tt;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLiteDAO;
+import static com.example.BTL_App_truyen_tranh.SQL.TheLoai.getall_tl;
+import static com.example.BTL_App_truyen_tranh.SQL.TruyenTranh.getall_tt;
+import static com.example.BTL_App_truyen_tranh.SQL.TruyenTranh.timkiem_tt;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -17,21 +16,13 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.BTL_App_truyen_tranh.DAO.SQLiteDAO;
-import com.example.BTL_App_truyen_tranh.DTO.TheLoai;
-import com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQlItemTruyen;
-import com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.QuanLyTruyen;
+import com.example.BTL_App_truyen_tranh.SQL.SQLite;
 import com.example.BTL_App_truyen_tranh.R;
-
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class HomePage extends AppCompatActivity {
     private RecyclerView list_item_truyen;
     private RecyclerView list_the_loai;
-    public static SQLiteDAO sqLiteDAO1;
+    public static SQLite sqLiteDAO1;
     private TextView text_name;
     private EditText timkiem;
 
@@ -42,8 +33,10 @@ public class HomePage extends AppCompatActivity {
         list_item_truyen = findViewById(R.id.list_item_truyen);
         list_the_loai = findViewById(R.id.list_the_loai);
         text_name = findViewById(R.id.text_name);
-        sqLiteDAO1 = new SQLiteDAO(this);
+        sqLiteDAO1 = new SQLite(this);
         sqLiteDAO1.getdatatl();
+        sqLiteDAO1.getdatatDanhgia();
+        sqLiteDAO1.getdatatkieuTruye();
         sqLiteDAO1.getdataTruyenTranh();
         sqLiteDAO1.getdataChap();
         sqLiteDAO1.getdataImgChap();

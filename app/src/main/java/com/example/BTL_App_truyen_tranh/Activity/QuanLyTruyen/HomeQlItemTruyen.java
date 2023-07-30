@@ -1,9 +1,9 @@
 package com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen;
 
-import static com.example.BTL_App_truyen_tranh.DAO.TheLoaiDAO.getall_tl;
-import static com.example.BTL_App_truyen_tranh.DAO.TruyenTranhDao.sua_truyentranh;
-import static com.example.BTL_App_truyen_tranh.DAO.TruyenTranhDao.xoa_truyentranh;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLiteDAO;
+import static com.example.BTL_App_truyen_tranh.SQL.TheLoai.getall_tl;
+import static com.example.BTL_App_truyen_tranh.SQL.TruyenTranh.sua_truyentranh;
+import static com.example.BTL_App_truyen_tranh.SQL.TruyenTranh.xoa_truyentranh;
+import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLite;
 import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.QuanLyTruyen.GetListTruyen;
 import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.QuanLyTruyen.chonphoto;
 import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.QuanLyTruyen.hasStoragePermission;
@@ -124,11 +124,11 @@ public class HomeQlItemTruyen extends RecyclerView.Adapter<HomeQlItemTruyen.Home
         EditText editTextGioiThieu = dialog.findViewById(R.id.editTextGioiThieu);
         Button button_huy = dialog.findViewById(R.id.button_huy);
         Button button_them = dialog.findViewById(R.id.button_them);
-        final ArrayAdapter adapter = new ArrayAdapter(context, R.layout.dropdown_item, getall_tl(sqLiteDAO));
+        final ArrayAdapter adapter = new ArrayAdapter(context, R.layout.dropdown_item, getall_tl(sqLite));
         spinner.setAdapter(adapter);
         int giatri = -1;
-        for (int i = 0; i < getall_tl(sqLiteDAO).size(); i++) {
-            if (getall_tl(sqLiteDAO).get(i).getTenTheLoai().equalsIgnoreCase(truyenTranhs.getTheLoai())) {
+        for (int i = 0; i < getall_tl(sqLite).size(); i++) {
+            if (getall_tl(sqLite).get(i).getTenTheLoai().equalsIgnoreCase(truyenTranhs.getTheLoai())) {
                 giatri = i;
                 break;
             }
@@ -178,14 +178,14 @@ public class HomeQlItemTruyen extends RecyclerView.Adapter<HomeQlItemTruyen.Home
                         if (selectImageUri != null) {
                             InputStream inputStream = context.getContentResolver().openInputStream(selectImageUri);
                             TruyenTranh truyenTranh = new TruyenTranh(truyenTranhs.getIdTruyen(), tenTruyenTranh, truyenTranhs.getNgayDang(), trangThai, spinner.getSelectedItem().toString(), gioiThieu, Utils.getBytes(inputStream));
-                            if (sua_truyentranh(truyenTranh, sqLiteDAO)) {
+                            if (sua_truyentranh(truyenTranh, sqLite)) {
                                 Toast.makeText(context, "Sửa thành công!", Toast.LENGTH_SHORT).show();
                                 GetListTruyen(context);
                                 dialog.dismiss();
                             }
                         } else {
                             TruyenTranh truyenTranh = new TruyenTranh(truyenTranhs.getIdTruyen(), tenTruyenTranh, truyenTranhs.getNgayDang(), trangThai, spinner.getSelectedItem().toString(), gioiThieu, truyenTranhs.getImg());
-                            if (sua_truyentranh(truyenTranh, sqLiteDAO)) {
+                            if (sua_truyentranh(truyenTranh, sqLite)) {
                                 Toast.makeText(context, "Sửa thành công!", Toast.LENGTH_SHORT).show();
                                 GetListTruyen(context);
                                 dialog.dismiss();

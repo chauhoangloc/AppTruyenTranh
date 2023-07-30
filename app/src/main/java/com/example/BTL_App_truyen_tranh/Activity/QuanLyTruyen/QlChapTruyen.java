@@ -1,7 +1,7 @@
 package com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen;
 
-import static com.example.BTL_App_truyen_tranh.DAO.ChapTruyen.getall_chap;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLiteDAO;
+import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.getall_chap;
+import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLite;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -53,7 +53,7 @@ public class QlChapTruyen extends AppCompatActivity {
     }
 
     public static void GetListChap(Context context,int idtt) {
-        HomeQLItemChap homeQLItemChap = new HomeQLItemChap(getall_chap(idtt,sqLiteDAO), context);
+        HomeQLItemChap homeQLItemChap = new HomeQLItemChap(getall_chap(idtt,sqLite), context);
         list_item_ql_ct.setAdapter(homeQLItemChap);
     }
 

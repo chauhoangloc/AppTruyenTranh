@@ -1,9 +1,9 @@
 package com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen;
 
-import static com.example.BTL_App_truyen_tranh.DAO.TheLoaiDAO.getall_tl;
-import static com.example.BTL_App_truyen_tranh.DAO.TheLoaiDAO.kiem_tra_tl;
-import static com.example.BTL_App_truyen_tranh.DAO.TheLoaiDAO.them_tl;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLiteDAO;
+import static com.example.BTL_App_truyen_tranh.SQL.TheLoai.getall_tl;
+import static com.example.BTL_App_truyen_tranh.SQL.TheLoai.kiem_tra_tl;
+import static com.example.BTL_App_truyen_tranh.SQL.TheLoai.them_tl;
+import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLite;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,13 +23,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.BTL_App_truyen_tranh.DTO.TheLoai;
-import com.example.BTL_App_truyen_tranh.GUI.Home.HomeItemTheloai;
 import com.example.BTL_App_truyen_tranh.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class QuanLyTheLoai extends AppCompatActivity {
     private ImageView img_back;
@@ -65,7 +60,7 @@ public class QuanLyTheLoai extends AppCompatActivity {
     public static void GetList(Context context) {
 
         //Khởi tạo homeQlItemTheLoai
-        HomeQlItemTheLoai homeQlItemTheLoai = new HomeQlItemTheLoai(getall_tl(sqLiteDAO), context);
+        HomeQlItemTheLoai homeQlItemTheLoai = new HomeQlItemTheLoai(getall_tl(sqLite), context);
         //Chuyền Adapter homeQlItemTheLoai cho list_item_ql_tl
         list_item_ql_tl.setAdapter(homeQlItemTheLoai);
 

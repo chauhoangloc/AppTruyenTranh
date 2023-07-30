@@ -29,10 +29,6 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
         anhXa();
         //Khởi tạo animation
-        Animation animationImageLogo = AnimationUtils.loadAnimation(this, R.anim.top_wave);
-        //Bắt đầu animation
-        imageLogo.setAnimation(animationImageLogo);
-        //Khởi tạo animation
         Animation animationZoomIn = AnimationUtils.loadAnimation(this, R.anim.zoom_in);
         //Bắt đầu animation
         animationViewLogo.setAnimation(animationZoomIn);
@@ -53,7 +49,7 @@ public class WelcomeActivity extends AppCompatActivity {
     private void anhXa() {
         //Khai báo id
         animationViewLogo = findViewById(R.id.animationViewLogo);
-        imageLogo = findViewById(R.id.imageLogo);
+
         textAppName = findViewById(R.id.textAppName);
     }
 

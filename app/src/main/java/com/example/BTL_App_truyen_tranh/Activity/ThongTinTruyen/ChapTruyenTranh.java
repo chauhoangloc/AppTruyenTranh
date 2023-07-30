@@ -1,7 +1,7 @@
 package com.example.BTL_App_truyen_tranh.GUI.ThongTinTruyen;
 
-import static com.example.BTL_App_truyen_tranh.DAO.ChapTruyen.getall_chap;
-import static com.example.BTL_App_truyen_tranh.DAO.ChapTruyen.getall_imgchap;
+import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.getall_chap;
+import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.getall_imgchap;
 import static com.example.BTL_App_truyen_tranh.GUI.Home.HomePage.sqLiteDAO1;
 
 import androidx.appcompat.app.AppCompatActivity;

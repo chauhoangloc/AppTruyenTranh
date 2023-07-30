@@ -1,9 +1,9 @@
 package com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen;
 
-import static com.example.BTL_App_truyen_tranh.DAO.ChapTruyen.sua_img;
-import static com.example.BTL_App_truyen_tranh.DAO.ChapTruyen.xoa_chap;
+import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.sua_img;
+import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.xoa_chap;
 import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.QlChapTruyen.GetListChap;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLiteDAO;
+import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLite;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -69,7 +69,7 @@ public class HomeQLItemChap extends RecyclerView.Adapter<HomeQLItemChap.HomeQLIt
                 .setPositiveButton("Xóa", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         if (xoa_chap(ids)) {
-                            sua_img(tenchap, sqLiteDAO);
+                            sua_img(tenchap, sqLite);
                             GetListChap(context,idtt);
                             Toast.makeText(context, "Xóa thành công", Toast.LENGTH_SHORT).show();
 

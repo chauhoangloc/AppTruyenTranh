@@ -29,11 +29,11 @@ public class SQLiteDAO extends SQLiteOpenHelper {
         get_data("create Table IF NOT EXISTS taikhoan(idtk INTEGER PRIMARY KEY AUTOINCREMENT,tk nvarchar(50), hoten nvarchar(50),mk nvarchar(50),role INTEGER)");
         get_data("INSERT INTO taikhoan (tk, hoten, mk, role) VALUES ('admin', 'admin', 'admin', 1)");
         get_data("INSERT INTO taikhoan (tk, hoten, mk, role) VALUES ('test1', 'test1', 'test1', 2)");
-
     }
-    public void getdatatR() {
-        get_data("CREATE TABLE IF NOT EXISTS theloai(idtl INTEGER PRIMARY KEY AUTOINCREMENT,tentl text)");
-
+    public void getdatatkieuTruyen() {
+        get_data("CREATE TABLE IF NOT EXISTS KieuTruyen(idkt INTEGER PRIMARY KEY AUTOINCREMENT,namekt TEXT)");
+        get_data("INSERT INTO KieuTruyen (namekt) VALUES ('Màu')");
+        get_data("INSERT INTO KieuTruyen (namekt) VALUES ('Chữ')");
     }
     public void getdatatl() {
         get_data("CREATE TABLE IF NOT EXISTS theloai(idtl INTEGER PRIMARY KEY AUTOINCREMENT,tentl text)");
@@ -55,7 +55,6 @@ public class SQLiteDAO extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-
     }
 
     @Override

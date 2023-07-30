@@ -9,6 +9,7 @@ public class TruyenTranh {
     String tinhTrang;
     String theLoai;
     String gioiThieu;
+    int hot;
     byte[] img;
 
     public TruyenTranh() {
@@ -81,4 +82,11 @@ public class TruyenTranh {
     }
 
 
+    public int getHot() {
+        return hot;
+    }
+
+    public void setHot(int hot) {
+        this.hot = hot;
+    }
 }

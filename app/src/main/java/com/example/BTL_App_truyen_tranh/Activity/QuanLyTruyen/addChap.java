@@ -1,11 +1,11 @@
 package com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen;
 
-import static com.example.BTL_App_truyen_tranh.DAO.ChapTruyen.getall_imgchap;
-import static com.example.BTL_App_truyen_tranh.DAO.ChapTruyen.kiem_tra_chap;
-import static com.example.BTL_App_truyen_tranh.DAO.ChapTruyen.sua_img;
-import static com.example.BTL_App_truyen_tranh.DAO.ChapTruyen.them_chaptruyen;
-import static com.example.BTL_App_truyen_tranh.DAO.ChapTruyen.them_imgchaptruyen;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLiteDAO;
+import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.getall_imgchap;
+import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.kiem_tra_chap;
+import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.sua_img;
+import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.them_chaptruyen;
+import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.them_imgchaptruyen;
+import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLite;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -68,7 +68,7 @@ public class addChap extends AppCompatActivity {
         list.clear();
         if (intent.getStringExtra("Key_tenChap") != null) {
             textTieude.setText("Sửa chap truyện");
-            list=getall_imgchap(intent.getStringExtra("Key_tenChap"),intent.getIntExtra("Key_idTruyen",0),sqLiteDAO);
+            list=getall_imgchap(intent.getStringExtra("Key_tenChap"),intent.getIntExtra("Key_idTruyen",0),sqLite);
             GetListImgChap(addChap.this);
         }
 
@@ -92,10 +92,10 @@ public class addChap extends AppCompatActivity {
                     builder.setMessage("Bạn có muốn sửa chap này không!")
                             .setPositiveButton("sửa", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
-                                    sua_img(intent.getStringExtra("Key_tenChap"),sqLiteDAO);
+                                    sua_img(intent.getStringExtra("Key_tenChap"),sqLite);
                                     for (int i = 0; i < list.size(); i++) {
                                         imgChap imgChap = new imgChap(0,intent.getIntExtra("Key_idTruyen",0), intent.getStringExtra("Key_tenChap"), list.get(i).getImg());
-                                        them_imgchaptruyen(imgChap, sqLiteDAO);
+                                        them_imgchaptruyen(imgChap, sqLite);
                                         if (i == list.size()-1) {
                                             Toast.makeText(addChap.this, "Sửa thành công!", Toast.LENGTH_SHORT).show();
                                             onBackPressed();
@@ -156,10 +156,10 @@ public class addChap extends AppCompatActivity {
                     } else {
                         if (list.size() > 0) {
                             Chap chap = new Chap(0, intent.getIntExtra("Key_idTruyen", 0), tenchap);
-                            if (them_chaptruyen(chap, sqLiteDAO)) {
+                            if (them_chaptruyen(chap, sqLite)) {
                                 for (int i = 0; i < list.size(); i++) {
                                     imgChap imgChap = new imgChap(0,intent.getIntExtra("Key_idTruyen",0), tenchap, list.get(i).getImg());
-                                    them_imgchaptruyen(imgChap, sqLiteDAO);
+                                    them_imgchaptruyen(imgChap, sqLite);
                                     if (i == list.size()-1) {
                                         Toast.makeText(dialog.getContext(), "Thêm thành công!", Toast.LENGTH_SHORT).show();
                                         onBackPressed();

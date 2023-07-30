@@ -1,7 +1,6 @@
 package com.example.BTL_App_truyen_tranh.GUI.TheLoaiTruyen;
 
-import static com.example.BTL_App_truyen_tranh.DAO.TruyenTranhDao.getall_tt;
-import static com.example.BTL_App_truyen_tranh.DAO.TruyenTranhDao.gettruyentranhtl;
+import static com.example.BTL_App_truyen_tranh.SQL.TruyenTranh.gettruyentranhtl;
 import static com.example.BTL_App_truyen_tranh.GUI.Home.HomePage.sqLiteDAO1;
 
 import androidx.appcompat.app.AppCompatActivity;

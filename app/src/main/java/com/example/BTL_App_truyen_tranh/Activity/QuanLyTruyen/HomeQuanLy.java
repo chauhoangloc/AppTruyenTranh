@@ -6,11 +6,10 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.BTL_App_truyen_tranh.DAO.SQLiteDAO;
+import com.example.BTL_App_truyen_tranh.SQL.SQLite;
 import com.example.BTL_App_truyen_tranh.GUI.Login.DangNhapActivity;
 import com.example.BTL_App_truyen_tranh.R;
 
@@ -18,7 +17,7 @@ public class HomeQuanLy extends AppCompatActivity {
     private CardView card_view_ql_truyen;
     private CardView card_view_ql_tl;
     private Button button_dang_xuat;
-    public static SQLiteDAO sqLiteDAO;
+    public static SQLite sqLite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +26,12 @@ public class HomeQuanLy extends AppCompatActivity {
         card_view_ql_tl = findViewById(R.id.card_view_ql_tl);
         card_view_ql_truyen = findViewById(R.id.card_view_ql_truyen);
         button_dang_xuat = findViewById(R.id.button_dang_xuat);
-        sqLiteDAO = new SQLiteDAO(this);
-        sqLiteDAO.getdatatl();
-        sqLiteDAO.getdataTruyenTranh();
-        sqLiteDAO.getdataChap();
-        sqLiteDAO.getdataImgChap();
+        sqLite = new SQLite(this);
+        sqLite.getdatatl();
+
+        sqLite.getdataTruyenTranh();
+        sqLite.getdataChap();
+        sqLite.getdataImgChap();
         onClick();
     }
 

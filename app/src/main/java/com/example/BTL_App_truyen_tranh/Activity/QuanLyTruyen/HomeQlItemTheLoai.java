@@ -1,7 +1,7 @@
 package com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen;
 
-import static com.example.BTL_App_truyen_tranh.DAO.TheLoaiDAO.sua_tl;
-import static com.example.BTL_App_truyen_tranh.DAO.TheLoaiDAO.xoa_tl;
+import static com.example.BTL_App_truyen_tranh.SQL.TheLoai.sua_tl;
+import static com.example.BTL_App_truyen_tranh.SQL.TheLoai.xoa_tl;
 import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.QuanLyTheLoai.GetList;
 
 import android.app.Dialog;

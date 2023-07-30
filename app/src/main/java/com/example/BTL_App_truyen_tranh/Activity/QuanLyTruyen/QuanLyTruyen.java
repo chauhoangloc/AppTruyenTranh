@@ -1,11 +1,10 @@
 package com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen;
 
-import static com.example.BTL_App_truyen_tranh.DAO.TheLoaiDAO.getall_tl;
-import static com.example.BTL_App_truyen_tranh.DAO.TruyenTranhDao.getall_tt;
-import static com.example.BTL_App_truyen_tranh.DAO.TruyenTranhDao.them_truyentranh;
-import static com.example.BTL_App_truyen_tranh.DAO.TruyenTranhDao.timkiem_tt;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLiteDAO;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.QuanLyTheLoai.list_item_ql_tl;
+import static com.example.BTL_App_truyen_tranh.SQL.TheLoai.getall_tl;
+import static com.example.BTL_App_truyen_tranh.SQL.TruyenTranh.getall_tt;
+import static com.example.BTL_App_truyen_tranh.SQL.TruyenTranh.them_truyentranh;
+import static com.example.BTL_App_truyen_tranh.SQL.TruyenTranh.timkiem_tt;
+import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLite;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -20,8 +19,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -29,7 +26,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -43,17 +39,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.BTL_App_truyen_tranh.BUS.Utils;
-import com.example.BTL_App_truyen_tranh.DTO.TheLoai;
 import com.example.BTL_App_truyen_tranh.DTO.TruyenTranh;
 import com.example.BTL_App_truyen_tranh.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 public class QuanLyTruyen extends AppCompatActivity {
     private FloatingActionButton floating_add;
@@ -108,7 +99,7 @@ public class QuanLyTruyen extends AppCompatActivity {
                     GetListTruyen(QuanLyTruyen.this);
                 } else {
                     //Khởi tạo HomeQlItemTruyen
-                    HomeQlItemTruyen homeQlItemTruyen = new HomeQlItemTruyen(timkiem_tt(timkiem.getText().toString().trim(),sqLiteDAO), QuanLyTruyen.this);
+                    HomeQlItemTruyen homeQlItemTruyen = new HomeQlItemTruyen(timkiem_tt(timkiem.getText().toString().trim(),sqLite), QuanLyTruyen.this);
                     //Chuyền Adapter homeQlItemTruyen cho list_item_truyen
                     list_item_truyen.setAdapter(homeQlItemTruyen);
                 }
@@ -141,7 +132,7 @@ public class QuanLyTruyen extends AppCompatActivity {
         Button button_them = dialog.findViewById(R.id.button_them);
 
         ten.setText("Thêm truyện tranh");
-        final ArrayAdapter adapter = new ArrayAdapter(QuanLyTruyen.this, R.layout.dropdown_item, getall_tl(sqLiteDAO));
+        final ArrayAdapter adapter = new ArrayAdapter(QuanLyTruyen.this, R.layout.dropdown_item, getall_tl(sqLite));
         spinner.setAdapter(adapter);
         spinner.setSelection(0);
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -181,7 +172,7 @@ public class QuanLyTruyen extends AppCompatActivity {
                         if (selectImageUri != null) {
                             InputStream inputStream = getContentResolver().openInputStream(selectImageUri);
                             TruyenTranh truyenTranh = new TruyenTranh(0, tenTruyenTranh, java.time.LocalDateTime.now().toString(), trangThai, spinner.getSelectedItem().toString(), gioiThieu, Utils.getBytes(inputStream));
-                            if (them_truyentranh(truyenTranh, sqLiteDAO)) {
+                            if (them_truyentranh(truyenTranh, sqLite)) {
                                 Toast.makeText(QuanLyTruyen.this, "Thêm thành công!", Toast.LENGTH_SHORT).show();
                                 GetListTruyen(QuanLyTruyen.this);
                                 dialog.dismiss();
@@ -233,7 +224,7 @@ public class QuanLyTruyen extends AppCompatActivity {
 
     public static void GetListTruyen(QuanLyTruyen context) {
         //Khởi tạo HomeQlItemTruyen
-        HomeQlItemTruyen homeQlItemTruyen = new HomeQlItemTruyen(getall_tt(sqLiteDAO), context);
+        HomeQlItemTruyen homeQlItemTruyen = new HomeQlItemTruyen(getall_tt(sqLite), context);
         //Chuyền Adapter homeQlItemTruyen cho list_item_truyen
         list_item_truyen.setAdapter(homeQlItemTruyen);
     }
