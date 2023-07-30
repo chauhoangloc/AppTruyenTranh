@@ -1,4 +1,4 @@
-package com.example.BTL_App_truyen_tranh.GUI.Welcome;
+package com.example.BTL_App_truyen_tranh.Activity.Welcome;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.example.BTL_App_truyen_tranh.GUI.Login.DangNhapActivity;
+import com.example.BTL_App_truyen_tranh.Activity.Login.DangNhapActivity;
 import com.example.BTL_App_truyen_tranh.R;
 
 public class WelcomeActivity extends AppCompatActivity {

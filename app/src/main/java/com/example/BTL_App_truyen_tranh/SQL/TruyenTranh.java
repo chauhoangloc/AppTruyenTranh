@@ -1,18 +1,16 @@
-package com.example.BTL_App_truyen_tranh.DAO;
+package com.example.BTL_App_truyen_tranh.SQL;
 
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLiteDAO;
+import static com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.HomeQuanLy.sqLite;
 
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.BTL_App_truyen_tranh.DTO.TruyenTranh;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class TruyenTranhDao {
-    public static Boolean them_truyentranh(TruyenTranh truyenTranh,SQLiteDAO sqLiteDAO) {
+public class TruyenTranh {
+    public static Boolean them_truyentranh(com.example.BTL_App_truyen_tranh.pojo.TruyenTranh truyenTranh, SQLite sqLiteDAO) {
         SQLiteDatabase MyDB = sqLiteDAO.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("tenTruyen", truyenTranh.getTenTruyen());
@@ -27,7 +25,7 @@ public class TruyenTranhDao {
         else
             return true;
     }
-    public static Boolean sua_truyentranh(TruyenTranh truyenTranh,SQLiteDAO sqLiteDAO) {
+    public static Boolean sua_truyentranh(com.example.BTL_App_truyen_tranh.pojo.TruyenTranh truyenTranh, SQLite sqLiteDAO) {
         SQLiteDatabase MyDB = sqLiteDAO.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("tenTruyen", truyenTranh.getTenTruyen());
@@ -43,21 +41,21 @@ public class TruyenTranhDao {
             return true;
     }
     public static boolean xoa_truyentranh(int idtt) {
-        SQLiteDatabase MyDB = sqLiteDAO.getWritableDatabase();
+        SQLiteDatabase MyDB = sqLite.getWritableDatabase();
         long result = MyDB.delete("truyentranh","idtt=?" , new String[]{String.valueOf(idtt)});
         if (result == -1)
             return false;
         else
             return true;
     }
-    public static List<TruyenTranh> getall_tt(SQLiteDAO sqLiteDAO) {
-        List<TruyenTranh> sanphams = new ArrayList<>();
+    public static List<com.example.BTL_App_truyen_tranh.pojo.TruyenTranh> getall_tt(SQLite sqLiteDAO) {
+        List<com.example.BTL_App_truyen_tranh.pojo.TruyenTranh> sanphams = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = sqLiteDAO.getWritableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("select * From truyentranh", null);
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
-                TruyenTranh truyenTranh = new TruyenTranh();
+                com.example.BTL_App_truyen_tranh.pojo.TruyenTranh truyenTranh = new com.example.BTL_App_truyen_tranh.pojo.TruyenTranh();
                 truyenTranh.setIdTruyen(cursor.getInt(0));
                 truyenTranh.setTenTruyen(cursor.getString(1));
                 truyenTranh.setNgayDang(cursor.getString(2));
@@ -72,14 +70,14 @@ public class TruyenTranhDao {
         }
         return sanphams;
     }
-    public static List<TruyenTranh> timkiem_tt(String tenTruyen,SQLiteDAO sqLiteDAO) {
-        List<TruyenTranh> sanphams = new ArrayList<>();
+    public static List<com.example.BTL_App_truyen_tranh.pojo.TruyenTranh> timkiem_tt(String tenTruyen, SQLite sqLiteDAO) {
+        List<com.example.BTL_App_truyen_tranh.pojo.TruyenTranh> sanphams = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = sqLiteDAO.getWritableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("select * From truyentranh where tenTruyen LIKE ?", new String[]{"%" + tenTruyen + "%"});
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
-                TruyenTranh truyenTranh = new TruyenTranh();
+                com.example.BTL_App_truyen_tranh.pojo.TruyenTranh truyenTranh = new com.example.BTL_App_truyen_tranh.pojo.TruyenTranh();
                 truyenTranh.setIdTruyen(cursor.getInt(0));
                 truyenTranh.setTenTruyen(cursor.getString(1));
                 truyenTranh.setNgayDang(cursor.getString(2));
@@ -94,14 +92,14 @@ public class TruyenTranhDao {
         }
         return sanphams;
     }
-    public static List<TruyenTranh> gettruyentranhtl(String tentl,SQLiteDAO sqLiteDAO) {
-        List<TruyenTranh> sanphams = new ArrayList<>();
+    public static List<com.example.BTL_App_truyen_tranh.pojo.TruyenTranh> gettruyentranhtl(String tentl, SQLite sqLiteDAO) {
+        List<com.example.BTL_App_truyen_tranh.pojo.TruyenTranh> sanphams = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = sqLiteDAO.getWritableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("select * From truyentranh where theLoai= ?", new String[]{tentl });
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
-                TruyenTranh truyenTranh = new TruyenTranh();
+                com.example.BTL_App_truyen_tranh.pojo.TruyenTranh truyenTranh = new com.example.BTL_App_truyen_tranh.pojo.TruyenTranh();
                 truyenTranh.setIdTruyen(cursor.getInt(0));
                 truyenTranh.setTenTruyen(cursor.getString(1));
                 truyenTranh.setNgayDang(cursor.getString(2));
@@ -116,8 +114,8 @@ public class TruyenTranhDao {
         }
         return sanphams;
     }
-    public static TruyenTranh get_truyentranh(int idtt,SQLiteDAO sqLiteDAO) {
-        TruyenTranh truyenTranh = new TruyenTranh();
+    public static com.example.BTL_App_truyen_tranh.pojo.TruyenTranh get_truyentranh(int idtt, SQLite sqLiteDAO) {
+        com.example.BTL_App_truyen_tranh.pojo.TruyenTranh truyenTranh = new com.example.BTL_App_truyen_tranh.pojo.TruyenTranh();
         SQLiteDatabase MyDB = sqLiteDAO.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from truyentranh where idtt = ?", new String[]{String.valueOf(idtt)});
         if (cursor.getCount() > 0) {

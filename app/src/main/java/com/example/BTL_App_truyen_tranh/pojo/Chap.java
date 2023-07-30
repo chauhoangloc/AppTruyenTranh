@@ -1,6 +1,4 @@
-package com.example.BTL_App_truyen_tranh.DTO;
-
-import java.util.List;
+package com.example.BTL_App_truyen_tranh.pojo;
 
 public class Chap {
     private int idChap;

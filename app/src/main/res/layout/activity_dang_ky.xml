@@ -4,16 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GUI.Login.DangNhapActivity">
+    tools:context=".Activity.Login.DangNhapActivity">
 
-    <ImageView
-        android:id="@+id/imageLogo"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="30dp"
-        android:src="@drawable/back_cat" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

@@ -1,7 +1,7 @@
-package com.example.BTL_App_truyen_tranh.GUI.Home;
+package com.example.BTL_App_truyen_tranh.Activity.Home;
 
 import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.getall_chap;
-import static com.example.BTL_App_truyen_tranh.GUI.Home.HomePage.sqLiteDAO1;
+import static com.example.BTL_App_truyen_tranh.Activity.Home.HomePage.sqLiteDAO1;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,10 +15,10 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.BTL_App_truyen_tranh.BUS.Utils;
-import com.example.BTL_App_truyen_tranh.DTO.Chap;
-import com.example.BTL_App_truyen_tranh.DTO.TruyenTranh;
-import com.example.BTL_App_truyen_tranh.GUI.ThongTinTruyen.ThongTinTuyen;
+import com.example.BTL_App_truyen_tranh.Utils.Utils;
+import com.example.BTL_App_truyen_tranh.pojo.Chap;
+import com.example.BTL_App_truyen_tranh.pojo.TruyenTranh;
+import com.example.BTL_App_truyen_tranh.Activity.ThongTinTruyen.ThongTinTuyen;
 import com.example.BTL_App_truyen_tranh.R;
 
 import java.util.List;

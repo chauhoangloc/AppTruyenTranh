@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".GUI.ThongTinTruyen.ChapTruyenTranh">
+    tools:context=".Activity.ThongTinTruyen.ChapTruyenTranh">
 
 
     <LinearLayout
@@ -32,12 +32,11 @@
     </LinearLayout>
 
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_item_img"
-        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

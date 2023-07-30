@@ -1,20 +1,20 @@
-package com.example.BTL_App_truyen_tranh.DAO;
+package com.example.BTL_App_truyen_tranh.SQL;
 
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLiteDAO;
+import static com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.HomeQuanLy.sqLite;
 
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.BTL_App_truyen_tranh.DTO.Chap;
-import com.example.BTL_App_truyen_tranh.DTO.imgChap;
+import com.example.BTL_App_truyen_tranh.pojo.Chap;
+import com.example.BTL_App_truyen_tranh.pojo.imgChap;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class ChapTruyen {
-    public static Boolean them_chaptruyen(Chap chap, SQLiteDAO sqLiteDAO) {
+    public static Boolean them_chaptruyen(Chap chap, SQLite sqLiteDAO) {
         SQLiteDatabase MyDB = sqLiteDAO.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("idtt", chap.getIdtt());
@@ -26,7 +26,7 @@ public class ChapTruyen {
             return true;
     }
 
-    public static Boolean them_imgchaptruyen(imgChap imgchap, SQLiteDAO sqLiteDAO) {
+    public static Boolean them_imgchaptruyen(imgChap imgchap, SQLite sqLiteDAO) {
         SQLiteDatabase MyDB = sqLiteDAO.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("idtt", imgchap.getIdtt());
@@ -39,7 +39,7 @@ public class ChapTruyen {
             return true;
     }
 
-    public static Boolean sua_img(String tenchap, SQLiteDAO sqLiteDAO) {
+    public static Boolean sua_img(String tenchap, SQLite sqLiteDAO) {
         SQLiteDatabase MyDB = sqLiteDAO.getWritableDatabase();
         long result = MyDB.delete("imgchap", "tenChap=?", new String[]{tenchap});
         if (result == -1)
@@ -49,7 +49,7 @@ public class ChapTruyen {
     }
 
     public static Boolean kiem_tra_chap(String tenchap,int idtt) {
-        SQLiteDatabase MyDB = sqLiteDAO.getWritableDatabase();
+        SQLiteDatabase MyDB = sqLite.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from chap where tenChap = ? and idtt=?", new String[]{tenchap,String.valueOf(idtt)});
         if (cursor.getCount() > 0)
             return true;
@@ -58,7 +58,7 @@ public class ChapTruyen {
     }
 
     public static boolean xoa_chap(int idChap) {
-        SQLiteDatabase MyDB = sqLiteDAO.getWritableDatabase();
+        SQLiteDatabase MyDB = sqLite.getWritableDatabase();
         long result = MyDB.delete("chap", "idChap=?", new String[]{String.valueOf(idChap)});
         if (result == -1)
             return false;
@@ -66,7 +66,7 @@ public class ChapTruyen {
             return true;
     }
 
-    public static List<Chap> getall_chap(int idtt,SQLiteDAO sqLiteDAO) {
+    public static List<Chap> getall_chap(int idtt, SQLite sqLiteDAO) {
         List<Chap> chapList = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = sqLiteDAO.getWritableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("select * From chap  where idtt = ?", new String[]{String.valueOf(idtt)});
@@ -84,7 +84,7 @@ public class ChapTruyen {
         }
         return chapList;
     }
-    public static List<imgChap> getall_imgchap(String tenChap,int idtt,SQLiteDAO sqLiteDAO) {
+    public static List<imgChap> getall_imgchap(String tenChap, int idtt, SQLite sqLiteDAO) {
         List<imgChap> imgChapList = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = sqLiteDAO.getWritableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("select * From imgchap where tenChap = ? and idtt = ? ",  new String[]{tenChap,String.valueOf(idtt)});
@@ -104,7 +104,7 @@ public class ChapTruyen {
         return imgChapList;
     }
 
-    public static Chap get_chap(int idChap, SQLiteDAO sqLiteDAO) {
+    public static Chap get_chap(int idChap, SQLite sqLiteDAO) {
         Chap chap = new Chap();
         SQLiteDatabase MyDB = sqLiteDAO.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from chap where idChap = ?", new String[]{String.valueOf(idChap)});
@@ -118,7 +118,7 @@ public class ChapTruyen {
         }
         return null;
     }
-    public static imgChap get_imgchap(int idChap, SQLiteDAO sqLiteDAO) {
+    public static imgChap get_imgchap(int idChap, SQLite sqLiteDAO) {
         imgChap imgChap = new imgChap();
         SQLiteDatabase MyDB = sqLiteDAO.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from imgchap where idChap = ?", new String[]{String.valueOf(idChap)});

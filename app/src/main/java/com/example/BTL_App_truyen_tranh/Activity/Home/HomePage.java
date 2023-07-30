@@ -1,4 +1,4 @@
-package com.example.BTL_App_truyen_tranh.GUI.Home;
+package com.example.BTL_App_truyen_tranh.Activity.Home;
 
 import static com.example.BTL_App_truyen_tranh.SQL.TheLoai.getall_tl;
 import static com.example.BTL_App_truyen_tranh.SQL.TruyenTranh.getall_tt;
@@ -35,8 +35,6 @@ public class HomePage extends AppCompatActivity {
         text_name = findViewById(R.id.text_name);
         sqLiteDAO1 = new SQLite(this);
         sqLiteDAO1.getdatatl();
-        sqLiteDAO1.getdatatDanhgia();
-        sqLiteDAO1.getdatatkieuTruye();
         sqLiteDAO1.getdataTruyenTranh();
         sqLiteDAO1.getdataChap();
         sqLiteDAO1.getdataImgChap();

@@ -1,7 +1,7 @@
-package com.example.BTL_App_truyen_tranh.GUI.TheLoaiTruyen;
+package com.example.BTL_App_truyen_tranh.Activity.TheLoaiTruyen;
 
 import static com.example.BTL_App_truyen_tranh.SQL.TruyenTranh.gettruyentranhtl;
-import static com.example.BTL_App_truyen_tranh.GUI.Home.HomePage.sqLiteDAO1;
+import static com.example.BTL_App_truyen_tranh.Activity.Home.HomePage.sqLiteDAO1;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.BTL_App_truyen_tranh.GUI.Home.HomeItemTruyen;
+import com.example.BTL_App_truyen_tranh.Activity.Home.HomeItemTruyen;
 import com.example.BTL_App_truyen_tranh.R;
 
 public class TheLoaiTruyen extends AppCompatActivity {

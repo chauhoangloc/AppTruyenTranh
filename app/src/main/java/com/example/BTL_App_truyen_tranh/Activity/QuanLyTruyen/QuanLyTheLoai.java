@@ -1,9 +1,9 @@
-package com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen;
+package com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen;
 
 import static com.example.BTL_App_truyen_tranh.SQL.TheLoai.getall_tl;
 import static com.example.BTL_App_truyen_tranh.SQL.TheLoai.kiem_tra_tl;
 import static com.example.BTL_App_truyen_tranh.SQL.TheLoai.them_tl;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLite;
+import static com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.HomeQuanLy.sqLite;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;

@@ -1,8 +1,8 @@
-package com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen;
+package com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen;
 
 import static com.example.BTL_App_truyen_tranh.SQL.TheLoai.sua_tl;
 import static com.example.BTL_App_truyen_tranh.SQL.TheLoai.xoa_tl;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.QuanLyTheLoai.GetList;
+import static com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.QuanLyTheLoai.GetList;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -24,7 +24,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.BTL_App_truyen_tranh.DTO.TheLoai;
+import com.example.BTL_App_truyen_tranh.pojo.TheLoai;
 import com.example.BTL_App_truyen_tranh.R;
 
 import java.util.List;

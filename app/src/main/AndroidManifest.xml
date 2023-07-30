@@ -16,35 +16,35 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name="com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.addChap"
+            android:name="com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.addChap"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.QlChapTruyen"
+            android:name="com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.QlChapTruyen"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.QuanLyTheLoai"
+            android:name="com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.QuanLyTheLoai"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.QuanLyTruyen"
+            android:name="com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.QuanLyTruyen"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy"
+            android:name="com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.HomeQuanLy"
             android:exported="false"
             android:label="@string/title_activity_home_quan_ly"
             android:theme="@style/Theme.MyApplication.NoActionBar">
@@ -53,34 +53,34 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.BTL_App_truyen_tranh.GUI.TheLoaiTruyen.TheLoaiTruyen"
+            android:name="com.example.BTL_App_truyen_tranh.Activity.TheLoaiTruyen.TheLoaiTruyen"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.BTL_App_truyen_tranh.GUI.ThongTinTruyen.ChapTruyenTranh"
+            android:name="com.example.BTL_App_truyen_tranh.Activity.ThongTinTruyen.ChapTruyenTranh"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.BTL_App_truyen_tranh.GUI.ThongTinTruyen.ThongTinTuyen"
+            android:name="com.example.BTL_App_truyen_tranh.Activity.ThongTinTruyen.ThongTinTuyen"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.example.BTL_App_truyen_tranh.GUI.Login.DangKyActivity"
+            android:name="com.example.BTL_App_truyen_tranh.Activity.Login.DangKyActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.BTL_App_truyen_tranh.GUI.Login.DangNhapActivity"
+            android:name="com.example.BTL_App_truyen_tranh.Activity.Login.DangNhapActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.BTL_App_truyen_tranh.GUI.Welcome.WelcomeActivity"
+            android:name="com.example.BTL_App_truyen_tranh.Activity.Welcome.WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -89,7 +89,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.BTL_App_truyen_tranh.GUI.Home.HomePage"
+            android:name="com.example.BTL_App_truyen_tranh.Activity.Home.HomePage"
             android:exported="false" />
         <activity
             android:name="com.example.BTL_App_truyen_tranh.MainActivity"

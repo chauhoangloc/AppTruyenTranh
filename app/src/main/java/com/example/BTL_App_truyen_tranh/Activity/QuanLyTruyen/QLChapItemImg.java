@@ -1,9 +1,9 @@
-package com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen;
+package com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen;
 
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.QuanLyTruyen.chonphoto;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.addChap.GetListImgChap;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.addChap.chonphoto2;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.addChap.hasStoragePermissionImg;
+import static com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.QuanLyTruyen.chonphoto;
+import static com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.addChap.GetListImgChap;
+import static com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.addChap.chonphoto2;
+import static com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.addChap.hasStoragePermissionImg;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -21,8 +21,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.BTL_App_truyen_tranh.BUS.Utils;
-import com.example.BTL_App_truyen_tranh.DTO.imgChap;
+import com.example.BTL_App_truyen_tranh.Utils.Utils;
+import com.example.BTL_App_truyen_tranh.pojo.imgChap;
 import com.example.BTL_App_truyen_tranh.R;
 
 import java.util.List;

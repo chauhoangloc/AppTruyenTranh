@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".GUI.QuanLyTruyen.addChap">
+    tools:context=".Activity.QuanLyTruyen.addChap">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floating_add"
@@ -17,7 +17,6 @@
         android:layout_marginRight="20dp"
         android:clickable="true"
         android:src="@android:drawable/ic_input_add" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
@@ -52,12 +51,11 @@
                 android:textColor="#2196F3"
                 android:text="Lưu"/>
         </LinearLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list_item_ql_ct"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
-
-
 
 </RelativeLayout>

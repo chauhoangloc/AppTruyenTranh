@@ -1,4 +1,4 @@
-package com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen;
+package com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.BTL_App_truyen_tranh.SQL.SQLite;
-import com.example.BTL_App_truyen_tranh.GUI.Login.DangNhapActivity;
+import com.example.BTL_App_truyen_tranh.Activity.Login.DangNhapActivity;
 import com.example.BTL_App_truyen_tranh.R;
 
 public class HomeQuanLy extends AppCompatActivity {

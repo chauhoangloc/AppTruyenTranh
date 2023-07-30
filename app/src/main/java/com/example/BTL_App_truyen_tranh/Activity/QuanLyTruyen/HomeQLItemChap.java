@@ -1,9 +1,9 @@
-package com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen;
+package com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen;
 
 import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.sua_img;
 import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.xoa_chap;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.QlChapTruyen.GetListChap;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLite;
+import static com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.QlChapTruyen.GetListChap;
+import static com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.HomeQuanLy.sqLite;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -19,7 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.BTL_App_truyen_tranh.DTO.Chap;
+import com.example.BTL_App_truyen_tranh.pojo.Chap;
 import com.example.BTL_App_truyen_tranh.R;
 
 import java.util.List;

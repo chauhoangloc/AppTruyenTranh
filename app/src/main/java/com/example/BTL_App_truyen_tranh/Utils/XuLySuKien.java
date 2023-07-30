@@ -1,4 +1,4 @@
-package com.example.BTL_App_truyen_tranh.BUS;
+package com.example.BTL_App_truyen_tranh.Utils;
 
 import android.content.Context;
 import android.view.animation.Animation;

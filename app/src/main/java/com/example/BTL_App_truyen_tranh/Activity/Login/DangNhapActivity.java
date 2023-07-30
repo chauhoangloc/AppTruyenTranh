@@ -1,8 +1,8 @@
-package com.example.BTL_App_truyen_tranh.GUI.Login;
+package com.example.BTL_App_truyen_tranh.Activity.Login;
 
-import static com.example.BTL_App_truyen_tranh.BUS.XuLySuKien.ANIMATION;
-import static com.example.BTL_App_truyen_tranh.BUS.XuLySuKien.ANIMATIONDOWN;
-import static com.example.BTL_App_truyen_tranh.BUS.XuLySuKien.ANIMATIONUP;
+import static com.example.BTL_App_truyen_tranh.Utils.XuLySuKien.ANIMATION;
+import static com.example.BTL_App_truyen_tranh.Utils.XuLySuKien.ANIMATIONDOWN;
+import static com.example.BTL_App_truyen_tranh.Utils.XuLySuKien.ANIMATIONUP;
 import static com.example.BTL_App_truyen_tranh.SQL.TaiKhoan.kiem_tra_dn;
 import static com.example.BTL_App_truyen_tranh.SQL.TaiKhoan.kiem_tra_role;
 
@@ -24,9 +24,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.BTL_App_truyen_tranh.SQL.SQLite;
-import com.example.BTL_App_truyen_tranh.DTO.TaiKhoan;
-import com.example.BTL_App_truyen_tranh.GUI.Home.HomePage;
-import com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy;
+import com.example.BTL_App_truyen_tranh.pojo.TaiKhoan;
+import com.example.BTL_App_truyen_tranh.Activity.Home.HomePage;
+import com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.HomeQuanLy;
 import com.example.BTL_App_truyen_tranh.R;
 
 public class DangNhapActivity extends AppCompatActivity {
@@ -139,9 +139,7 @@ public class DangNhapActivity extends AppCompatActivity {
     };
 
     private void anhXa() {
-        //Khai báo hoạt ảnh
         ANIMATION(this);
-        //Khai báo id
         animationViewLogo = findViewById(R.id.animationViewLogo);
         textAppName = findViewById(R.id.textAppName);
         edit_taikhoan = findViewById(R.id.edit_taikhoan);
@@ -150,9 +148,11 @@ public class DangNhapActivity extends AppCompatActivity {
         text_dang_ky = findViewById(R.id.text_dang_ky);
         sqLiteDAO = new SQLite(DangNhapActivity.this);
         sqLiteDAO.getdatatk();
+        sqLiteDAO.getdatatDanhgia();
+        sqLiteDAO.getdatatkieuTruyen();
+        sqLiteDAO.getdatatLichSu();
     }
 
-    //Tạo phương pháp văn bản động
     public void animatText(CharSequence cs) {
         //Set text
         charSequence = cs;
@@ -162,7 +162,7 @@ public class DangNhapActivity extends AppCompatActivity {
         textAppName.setText("");
         //Xóa cuộc gọi lại
 
-        //Chayk handler
+        //Chạy handler
         handler.postDelayed(runnable, delay);
     }
 }

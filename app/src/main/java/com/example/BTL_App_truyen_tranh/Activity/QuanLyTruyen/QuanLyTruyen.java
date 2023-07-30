@@ -1,10 +1,10 @@
-package com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen;
+package com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen;
 
 import static com.example.BTL_App_truyen_tranh.SQL.TheLoai.getall_tl;
 import static com.example.BTL_App_truyen_tranh.SQL.TruyenTranh.getall_tt;
 import static com.example.BTL_App_truyen_tranh.SQL.TruyenTranh.them_truyentranh;
 import static com.example.BTL_App_truyen_tranh.SQL.TruyenTranh.timkiem_tt;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLite;
+import static com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.HomeQuanLy.sqLite;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -38,8 +38,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.BTL_App_truyen_tranh.BUS.Utils;
-import com.example.BTL_App_truyen_tranh.DTO.TruyenTranh;
+import com.example.BTL_App_truyen_tranh.Utils.Utils;
+import com.example.BTL_App_truyen_tranh.pojo.TruyenTranh;
 import com.example.BTL_App_truyen_tranh.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 

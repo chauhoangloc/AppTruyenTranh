@@ -1,17 +1,16 @@
-package com.example.BTL_App_truyen_tranh.DAO;
+package com.example.BTL_App_truyen_tranh.SQL;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-public class SQLiteDAO extends SQLiteOpenHelper {
-    public SQLiteDAO(@Nullable Context context) {
+import java.util.Date;
+
+public class SQLite extends SQLiteOpenHelper {
+    public SQLite(@Nullable Context context) {
         super(context, "DATASQLITE", null, 1);
     }
 
@@ -32,8 +31,12 @@ public class SQLiteDAO extends SQLiteOpenHelper {
     }
     public void getdatatkieuTruyen() {
         get_data("CREATE TABLE IF NOT EXISTS KieuTruyen(idkt INTEGER PRIMARY KEY AUTOINCREMENT,namekt TEXT)");
-        get_data("INSERT INTO KieuTruyen (namekt) VALUES ('Màu')");
-        get_data("INSERT INTO KieuTruyen (namekt) VALUES ('Chữ')");
+    }
+    public void getdatatLichSu() {
+        get_data("CREATE TABLE IF NOT EXISTS LichSU(idlichsu INTEGER PRIMARY KEY AUTOINCREMENT,idtaikhoan INTEGER,idTruyenTranh INTEGER,idchap INTEGER)");
+    }
+    public void getdatatDanhgia() {
+        get_data("CREATE TABLE IF NOT EXISTS Danhgia(iddanhgia INTEGER PRIMARY KEY AUTOINCREMENT,idtaikhoan INTEGER,idtruyentranh INTEGER,diem INTEGER,noidung TEXT,ngay TEXT)");
     }
     public void getdatatl() {
         get_data("CREATE TABLE IF NOT EXISTS theloai(idtl INTEGER PRIMARY KEY AUTOINCREMENT,tentl text)");
@@ -43,12 +46,13 @@ public class SQLiteDAO extends SQLiteOpenHelper {
     }
 
     public void getdataTruyenTranh() {
-        get_data("create Table IF NOT EXISTS truyentranh(idtt INTEGER PRIMARY KEY AUTOINCREMENT,tenTruyen text,ngayDang text , tinhTrang text, theLoai text ,gioiThieu text, img blob)");
+        get_data("create Table IF NOT EXISTS truyentranh(idtt INTEGER PRIMARY KEY AUTOINCREMENT,tenTruyen text,ngayDang text , tinhTrang text,int hot, theLoai text ,gioiThieu text, img blob)");
     }
 
 
     public void getdataChap() {
         get_data("create Table IF NOT EXISTS chap(idChap INTEGER PRIMARY KEY AUTOINCREMENT,idtt INTEGER,tenChap text)");
+
     }
     public void getdataImgChap() {
         get_data("create Table IF NOT EXISTS imgchap(idimgChap INTEGER PRIMARY KEY AUTOINCREMENT,idtt INTEGER,tenChap text,img blob)");

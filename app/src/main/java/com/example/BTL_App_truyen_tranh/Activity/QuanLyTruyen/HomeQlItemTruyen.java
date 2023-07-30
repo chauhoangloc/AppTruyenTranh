@@ -1,14 +1,14 @@
-package com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen;
+package com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen;
 
 import static com.example.BTL_App_truyen_tranh.SQL.TheLoai.getall_tl;
 import static com.example.BTL_App_truyen_tranh.SQL.TruyenTranh.sua_truyentranh;
 import static com.example.BTL_App_truyen_tranh.SQL.TruyenTranh.xoa_truyentranh;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLite;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.QuanLyTruyen.GetListTruyen;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.QuanLyTruyen.chonphoto;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.QuanLyTruyen.hasStoragePermission;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.QuanLyTruyen.imageView;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.QuanLyTruyen.selectImageUri;
+import static com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.HomeQuanLy.sqLite;
+import static com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.QuanLyTruyen.GetListTruyen;
+import static com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.QuanLyTruyen.chonphoto;
+import static com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.QuanLyTruyen.hasStoragePermission;
+import static com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.QuanLyTruyen.imageView;
+import static com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.QuanLyTruyen.selectImageUri;
 
 import android.Manifest;
 import android.app.Dialog;
@@ -38,8 +38,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.BTL_App_truyen_tranh.BUS.Utils;
-import com.example.BTL_App_truyen_tranh.DTO.TruyenTranh;
+import com.example.BTL_App_truyen_tranh.Utils.Utils;
+import com.example.BTL_App_truyen_tranh.pojo.TruyenTranh;
 import com.example.BTL_App_truyen_tranh.R;
 
 import java.io.IOException;

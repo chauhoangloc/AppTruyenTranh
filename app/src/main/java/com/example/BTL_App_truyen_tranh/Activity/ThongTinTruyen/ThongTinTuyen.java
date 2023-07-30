@@ -1,8 +1,8 @@
-package com.example.BTL_App_truyen_tranh.GUI.ThongTinTruyen;
+package com.example.BTL_App_truyen_tranh.Activity.ThongTinTruyen;
 
 import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.getall_chap;
 import static com.example.BTL_App_truyen_tranh.SQL.TruyenTranh.get_truyentranh;
-import static com.example.BTL_App_truyen_tranh.GUI.Home.HomePage.sqLiteDAO1;
+import static com.example.BTL_App_truyen_tranh.Activity.Home.HomePage.sqLiteDAO1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,9 +15,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.BTL_App_truyen_tranh.BUS.Utils;
-import com.example.BTL_App_truyen_tranh.DTO.Chap;
-import com.example.BTL_App_truyen_tranh.DTO.TruyenTranh;
+import com.example.BTL_App_truyen_tranh.Utils.Utils;
+import com.example.BTL_App_truyen_tranh.pojo.Chap;
+import com.example.BTL_App_truyen_tranh.pojo.TruyenTranh;
 import com.example.BTL_App_truyen_tranh.R;
 
 import java.util.List;

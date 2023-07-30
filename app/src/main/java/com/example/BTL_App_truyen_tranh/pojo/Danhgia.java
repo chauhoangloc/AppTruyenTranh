@@ -1,4 +1,4 @@
-package com.example.BTL_App_truyen_tranh.DTO;
+package com.example.BTL_App_truyen_tranh.pojo;
 
 import java.util.Date;
 

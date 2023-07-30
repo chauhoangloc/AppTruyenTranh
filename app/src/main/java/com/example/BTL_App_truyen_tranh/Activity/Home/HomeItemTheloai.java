@@ -1,7 +1,7 @@
-package com.example.BTL_App_truyen_tranh.GUI.Home;
+package com.example.BTL_App_truyen_tranh.Activity.Home;
 
-import static com.example.BTL_App_truyen_tranh.BUS.XuLySuKien.ANIMATIONDOWN;
-import static com.example.BTL_App_truyen_tranh.BUS.XuLySuKien.ANIMATIONUP;
+import static com.example.BTL_App_truyen_tranh.Utils.XuLySuKien.ANIMATIONDOWN;
+import static com.example.BTL_App_truyen_tranh.Utils.XuLySuKien.ANIMATIONUP;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,16 +9,14 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.BTL_App_truyen_tranh.DTO.TheLoai;
-import com.example.BTL_App_truyen_tranh.GUI.TheLoaiTruyen.TheLoaiTruyen;
-import com.example.BTL_App_truyen_tranh.GUI.ThongTinTruyen.ThongTinTuyen;
+import com.example.BTL_App_truyen_tranh.pojo.TheLoai;
+import com.example.BTL_App_truyen_tranh.Activity.TheLoaiTruyen.TheLoaiTruyen;
 import com.example.BTL_App_truyen_tranh.R;
 
 import java.util.List;

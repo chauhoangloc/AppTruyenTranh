@@ -1,8 +1,8 @@
-package com.example.BTL_App_truyen_tranh.GUI.Login;
+package com.example.BTL_App_truyen_tranh.Activity.Login;
 
-import static com.example.BTL_App_truyen_tranh.BUS.XuLySuKien.ANIMATION;
-import static com.example.BTL_App_truyen_tranh.BUS.XuLySuKien.ANIMATIONDOWN;
-import static com.example.BTL_App_truyen_tranh.BUS.XuLySuKien.ANIMATIONUP;
+import static com.example.BTL_App_truyen_tranh.Utils.XuLySuKien.ANIMATION;
+import static com.example.BTL_App_truyen_tranh.Utils.XuLySuKien.ANIMATIONDOWN;
+import static com.example.BTL_App_truyen_tranh.Utils.XuLySuKien.ANIMATIONUP;
 import static com.example.BTL_App_truyen_tranh.SQL.TaiKhoan.kiem_tra_tk;
 import static com.example.BTL_App_truyen_tranh.SQL.TaiKhoan.them_taikhoan;
 
@@ -24,7 +24,7 @@ import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.BTL_App_truyen_tranh.SQL.SQLite;
-import com.example.BTL_App_truyen_tranh.DTO.TaiKhoan;
+import com.example.BTL_App_truyen_tranh.pojo.TaiKhoan;
 import com.example.BTL_App_truyen_tranh.R;
 
 public class DangKyActivity extends AppCompatActivity {

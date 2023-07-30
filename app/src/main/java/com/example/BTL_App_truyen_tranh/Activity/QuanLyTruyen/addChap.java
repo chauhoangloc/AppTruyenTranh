@@ -1,11 +1,11 @@
-package com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen;
+package com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen;
 
 import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.getall_imgchap;
 import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.kiem_tra_chap;
 import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.sua_img;
 import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.them_chaptruyen;
 import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.them_imgchaptruyen;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLite;
+import static com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.HomeQuanLy.sqLite;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -34,9 +34,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.BTL_App_truyen_tranh.BUS.Utils;
-import com.example.BTL_App_truyen_tranh.DTO.Chap;
-import com.example.BTL_App_truyen_tranh.DTO.imgChap;
+import com.example.BTL_App_truyen_tranh.Utils.Utils;
+import com.example.BTL_App_truyen_tranh.pojo.Chap;
+import com.example.BTL_App_truyen_tranh.pojo.imgChap;
 import com.example.BTL_App_truyen_tranh.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 

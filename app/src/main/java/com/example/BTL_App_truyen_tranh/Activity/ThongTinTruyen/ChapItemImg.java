@@ -1,29 +1,16 @@
-package com.example.BTL_App_truyen_tranh.GUI.ThongTinTruyen;
+package com.example.BTL_App_truyen_tranh.Activity.ThongTinTruyen;
 
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.QuanLyTruyen.chonphoto;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.addChap.GetListImgChap;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.addChap.chonphoto2;
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.addChap.hasStoragePermissionImg;
-
-import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.BTL_App_truyen_tranh.BUS.Utils;
-import com.example.BTL_App_truyen_tranh.DTO.imgChap;
-import com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.addChap;
+import com.example.BTL_App_truyen_tranh.Utils.Utils;
+import com.example.BTL_App_truyen_tranh.pojo.imgChap;
 import com.example.BTL_App_truyen_tranh.R;
 
 import java.util.List;

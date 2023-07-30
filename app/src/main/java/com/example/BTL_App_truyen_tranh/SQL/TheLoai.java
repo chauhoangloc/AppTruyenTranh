@@ -1,21 +1,19 @@
-package com.example.BTL_App_truyen_tranh.DAO;
+package com.example.BTL_App_truyen_tranh.SQL;
 
-import static com.example.BTL_App_truyen_tranh.GUI.QuanLyTruyen.HomeQuanLy.sqLiteDAO;
+import static com.example.BTL_App_truyen_tranh.Activity.QuanLyTruyen.HomeQuanLy.sqLite;
 
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.BTL_App_truyen_tranh.DTO.TheLoai;
-
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class TheLoaiDAO {
+public class TheLoai {
 
     public static Boolean them_tl(String tentl) {
-        SQLiteDatabase MyDB = sqLiteDAO.getWritableDatabase();
+        SQLiteDatabase MyDB = sqLite.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("tentl", tentl);
         long result = MyDB.insert("theloai", null, contentValues);
@@ -25,7 +23,7 @@ public class TheLoaiDAO {
             return true;
     }
     public static Boolean kiem_tra_tl(String tentl) {
-        SQLiteDatabase MyDB = sqLiteDAO.getWritableDatabase();
+        SQLiteDatabase MyDB = sqLite.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from theloai where tentl = ?", new String[]{tentl});
         if (cursor.getCount() > 0)
             return true;
@@ -33,7 +31,7 @@ public class TheLoaiDAO {
             return false;
     }
     public static boolean xoa_tl(int idtl) {
-        SQLiteDatabase MyDB = sqLiteDAO.getWritableDatabase();
+        SQLiteDatabase MyDB = sqLite.getWritableDatabase();
         long result = MyDB.delete("theloai","idtl=?" , new String[]{String.valueOf(idtl)});
         if (result == -1)
             return false;
@@ -41,7 +39,7 @@ public class TheLoaiDAO {
             return true;
     }
     public static boolean sua_tl(int idtl,String tentl) {
-        SQLiteDatabase MyDB = sqLiteDAO.getWritableDatabase();
+        SQLiteDatabase MyDB = sqLite.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("tentl",tentl);
         long result = MyDB.update("theloai",contentValues,"idtl=?" , new String[]{String.valueOf(idtl)});
@@ -50,14 +48,14 @@ public class TheLoaiDAO {
         else
             return true;
     }
-    public static List<TheLoai> getall_tl(SQLiteDAO sqLiteDAO)  {
-        List<TheLoai> theLoais = new ArrayList<>();
+    public static List<com.example.BTL_App_truyen_tranh.pojo.TheLoai> getall_tl(SQLite sqLiteDAO)  {
+        List<com.example.BTL_App_truyen_tranh.pojo.TheLoai> theLoais = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = sqLiteDAO.getWritableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("select * From theloai", null);
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
             while (!cursor.isAfterLast()) {
-                TheLoai theLoai = new TheLoai();
+                com.example.BTL_App_truyen_tranh.pojo.TheLoai theLoai = new com.example.BTL_App_truyen_tranh.pojo.TheLoai();
                 theLoai.setId(cursor.getInt(0));
                 theLoai.setTenTheLoai(cursor.getString(1));
                 theLoais.add(theLoai);
