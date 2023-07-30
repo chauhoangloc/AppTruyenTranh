@@ -2,7 +2,7 @@ package com.example.BTL_App_truyen_tranh.Activity.ThongTinTruyen;
 
 import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.getall_chap;
 import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.getall_imgchap;
-import static com.example.BTL_App_truyen_tranh.Activity.Home.HomePage.sqLiteDAO1;
+import static com.example.BTL_App_truyen_tranh.Activity.Home.HomePage.sqLite;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -49,12 +49,12 @@ public class ChapTruyenTranh extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ChapTruyenTranh.this, LinearLayoutManager.VERTICAL, false);
         list_item_img.setLayoutManager(linearLayoutManager);
         if (intent.getStringExtra("Key_tenChap") != null) {
-            list = getall_imgchap(intent.getStringExtra("Key_tenChap"), intent.getIntExtra("Key_idTruyen", 0), sqLiteDAO1);
+            list = getall_imgchap(intent.getStringExtra("Key_tenChap"), intent.getIntExtra("Key_idTruyen", 0), sqLite);
             tenchap.setText(intent.getStringExtra("Key_tenChap"));
             ListImgChap();
 
         }
-        List<Chap> listchap = getall_chap(intent.getIntExtra("Key_idTruyen", 0), sqLiteDAO1);
+        List<Chap> listchap = getall_chap(intent.getIntExtra("Key_idTruyen", 0), sqLite);
         for (int i=0;i<listchap.size();i++){
             if(intent.getStringExtra("Key_tenChap").equals(listchap.get(i).getTenChap())){
                 position=i;
@@ -77,7 +77,7 @@ public class ChapTruyenTranh extends AppCompatActivity {
                     }else {
                         button_sau.setVisibility(View.VISIBLE);
                     }
-                    list = getall_imgchap(listchap.get(position).getTenChap(), intent.getIntExtra("Key_idTruyen", 0), sqLiteDAO1);
+                    list = getall_imgchap(listchap.get(position).getTenChap(), intent.getIntExtra("Key_idTruyen", 0), sqLite);
                     tenchap.setText(listchap.get(position).getTenChap());
                     ListImgChap();
                 }
@@ -94,7 +94,7 @@ public class ChapTruyenTranh extends AppCompatActivity {
                     }else {
                         button_truoc.setVisibility(View.VISIBLE);
                     }
-                    list = getall_imgchap(listchap.get(position).getTenChap(), intent.getIntExtra("Key_idTruyen", 0), sqLiteDAO1);
+                    list = getall_imgchap(listchap.get(position).getTenChap(), intent.getIntExtra("Key_idTruyen", 0), sqLite);
                     tenchap.setText(listchap.get(position).getTenChap());
                     ListImgChap();
                 }

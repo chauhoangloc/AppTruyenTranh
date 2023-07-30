@@ -35,7 +35,7 @@ public class DangNhapActivity extends AppCompatActivity {
     TextView textAppName, text_dang_ky;
     Button button_dang_nhap;
     EditText edit_taikhoan, edit_mat_khau;
-    SQLite sqLiteDAO;
+    SQLite sqLite;
     CharSequence charSequence;
     int index;
     long delay = 200;
@@ -103,8 +103,8 @@ public class DangNhapActivity extends AppCompatActivity {
         } else {
             TaiKhoan taiKhoan = new TaiKhoan(0, tk, "", mk);
 
-                if (!kiem_tra_dn(taiKhoan, sqLiteDAO).isEmpty()) {
-                    int role = kiem_tra_role(taiKhoan, sqLiteDAO);
+                if (!kiem_tra_dn(taiKhoan, sqLite).isEmpty()) {
+                    int role = kiem_tra_role(taiKhoan, sqLite);
                     if (role == 1) {
                         Intent intent = new Intent(DangNhapActivity.this, HomeQuanLy.class);
                         startActivity(intent);
@@ -112,7 +112,7 @@ public class DangNhapActivity extends AppCompatActivity {
                     } else{
                         Toast.makeText(DangNhapActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(DangNhapActivity.this, HomePage.class);
-                        intent.putExtra("Key_hoten",  kiem_tra_dn(taiKhoan, sqLiteDAO));
+                        intent.putExtra("Key_hoten",  kiem_tra_dn(taiKhoan, sqLite));
                         startActivity(intent);
                         finish();
                     }
@@ -146,11 +146,11 @@ public class DangNhapActivity extends AppCompatActivity {
         edit_mat_khau = findViewById(R.id.edit_mat_khau);
         button_dang_nhap = findViewById(R.id.button_dang_nhap);
         text_dang_ky = findViewById(R.id.text_dang_ky);
-        sqLiteDAO = new SQLite(DangNhapActivity.this);
-        sqLiteDAO.getdatatk();
-        sqLiteDAO.getdatatDanhgia();
-        sqLiteDAO.getdatatkieuTruyen();
-        sqLiteDAO.getdatatLichSu();
+        sqLite = new SQLite(DangNhapActivity.this);
+        sqLite.getdatatk();
+        sqLite.getdatatDanhgia();
+        sqLite.getdatatkieuTruyen();
+        sqLite.getdatatLichSu();
     }
 
     public void animatText(CharSequence cs) {

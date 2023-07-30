@@ -2,7 +2,7 @@ package com.example.BTL_App_truyen_tranh.Activity.ThongTinTruyen;
 
 import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.getall_chap;
 import static com.example.BTL_App_truyen_tranh.SQL.TruyenTranh.get_truyentranh;
-import static com.example.BTL_App_truyen_tranh.Activity.Home.HomePage.sqLiteDAO1;
+import static com.example.BTL_App_truyen_tranh.Activity.Home.HomePage.sqLite;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -49,9 +49,9 @@ public class ThongTinTuyen extends AppCompatActivity {
             }
         });
         if (intent.getIntExtra("Key_idTruyen", 0) != 0) {
-            truyenTranh = get_truyentranh(intent.getIntExtra("Key_idTruyen", 0), sqLiteDAO1);
+            truyenTranh = get_truyentranh(intent.getIntExtra("Key_idTruyen", 0), sqLite);
         }
-        List<Chap> list = getall_chap(truyenTranh.getIdTruyen(), sqLiteDAO1);
+        List<Chap> list = getall_chap(truyenTranh.getIdTruyen(), sqLite);
         text_ten_truyen.setText(truyenTranh.getTenTruyen());
         text_time.setText(truyenTranh.getNgayDang());
         text_tinhtrang.setText(truyenTranh.getTinhTrang());

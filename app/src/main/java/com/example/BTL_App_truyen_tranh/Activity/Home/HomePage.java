@@ -22,7 +22,7 @@ import com.example.BTL_App_truyen_tranh.R;
 public class HomePage extends AppCompatActivity {
     private RecyclerView list_item_truyen;
     private RecyclerView list_the_loai;
-    public static SQLite sqLiteDAO1;
+    public static SQLite sqLite;
     private TextView text_name;
     private EditText timkiem;
 
@@ -33,11 +33,11 @@ public class HomePage extends AppCompatActivity {
         list_item_truyen = findViewById(R.id.list_item_truyen);
         list_the_loai = findViewById(R.id.list_the_loai);
         text_name = findViewById(R.id.text_name);
-        sqLiteDAO1 = new SQLite(this);
-        sqLiteDAO1.getdatatl();
-        sqLiteDAO1.getdataTruyenTranh();
-        sqLiteDAO1.getdataChap();
-        sqLiteDAO1.getdataImgChap();
+        sqLite = new SQLite(this);
+        sqLite.getdatatl();
+        sqLite.getdataTruyenTranh();
+        sqLite.getdataChap();
+        sqLite.getdataImgChap();
         Intent intent = getIntent();
         text_name.setText(intent.getStringExtra("Key_hoten"));
         timkiem = findViewById(R.id.timkiem);
@@ -62,7 +62,7 @@ public class HomePage extends AppCompatActivity {
                     GetListTruyen();
                 } else {
                     //Khởi tạo HomeQlItemTruyen
-                    HomeItemTruyen homeItemTruyen = new HomeItemTruyen(timkiem_tt(timkiem.getText().toString().trim(), sqLiteDAO1),HomePage.this);
+                    HomeItemTruyen homeItemTruyen = new HomeItemTruyen(timkiem_tt(timkiem.getText().toString().trim(), sqLite),HomePage.this);
                     //Chuyền adapter cho list_item_truyen
                     list_item_truyen.setAdapter(homeItemTruyen);
                 }
@@ -76,7 +76,7 @@ public class HomePage extends AppCompatActivity {
         //Chuyền linearLayoutManager cho list_item_truyen
         list_the_loai.setLayoutManager(linearLayoutManager);
         //Khởi tạo HomeItemTheloai
-        HomeItemTheloai homeItemTheloai = new HomeItemTheloai(getall_tl(sqLiteDAO1), this);
+        HomeItemTheloai homeItemTheloai = new HomeItemTheloai(getall_tl(sqLite), this);
         //Chuyền Adapter homeItemTheloai cho list_the_loai
         list_the_loai.setAdapter(homeItemTheloai);
 
@@ -85,7 +85,7 @@ public class HomePage extends AppCompatActivity {
 
     public void GetListTruyen() {
         //Khởi tạo HomeItemTruyen
-        HomeItemTruyen homeItemTruyen = new HomeItemTruyen(getall_tt(sqLiteDAO1), this);
+        HomeItemTruyen homeItemTruyen = new HomeItemTruyen(getall_tt(sqLite), this);
         //Chuyền adapter cho list_item_truyen
         list_item_truyen.setAdapter(homeItemTruyen);
     }

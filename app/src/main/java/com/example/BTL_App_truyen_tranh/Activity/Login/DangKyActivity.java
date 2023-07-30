@@ -33,7 +33,7 @@ public class DangKyActivity extends AppCompatActivity {
     TextView textAppName,text_dang_nhap;
     EditText edit_ho_ten,edit_mat_khau,edit_taikhoan;
     Button button_dang_ky;
-    SQLite sqLiteDAO;
+    SQLite sqLite;
     CharSequence charSequence;
     int index;
     long delay = 200;
@@ -96,10 +96,10 @@ public class DangKyActivity extends AppCompatActivity {
                             Toast.makeText(DangKyActivity.this, "Vui lòng ko để trống thông tin", Toast.LENGTH_SHORT).show();
                         } else {
                             TaiKhoan taiKhoan=new TaiKhoan(0,tk,hoten,matkhau);
-                            if (!kiem_tra_tk(tk,sqLiteDAO)) {
+                            if (!kiem_tra_tk(tk,sqLite)) {
                                 Log.e("tk",tk);
                                 Log.e("mk",matkhau);
-                                if (them_taikhoan(taiKhoan,sqLiteDAO)) {
+                                if (them_taikhoan(taiKhoan,sqLite)) {
                                     Toast.makeText(DangKyActivity.this, "Đã đăng ký thành công", Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(getApplicationContext(), DangNhapActivity.class));
                                     finish();
@@ -140,8 +140,8 @@ public class DangKyActivity extends AppCompatActivity {
         edit_ho_ten = findViewById(R.id.edit_ho_ten);
         edit_mat_khau = findViewById(R.id.edit_mat_khau);
         edit_taikhoan = findViewById(R.id.edit_taikhoan);
-        sqLiteDAO=new SQLite(DangKyActivity.this);
-        sqLiteDAO.getdatatk();
+        sqLite=new SQLite(DangKyActivity.this);
+        sqLite.getdatatk();
     }
 
     //Tạo phương pháp văn bản động

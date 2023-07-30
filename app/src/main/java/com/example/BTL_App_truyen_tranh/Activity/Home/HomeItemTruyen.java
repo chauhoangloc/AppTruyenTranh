@@ -1,7 +1,7 @@
 package com.example.BTL_App_truyen_tranh.Activity.Home;
 
 import static com.example.BTL_App_truyen_tranh.SQL.ChapTruyen.getall_chap;
-import static com.example.BTL_App_truyen_tranh.Activity.Home.HomePage.sqLiteDAO1;
+import static com.example.BTL_App_truyen_tranh.Activity.Home.HomePage.sqLite;
 
 import android.content.Context;
 import android.content.Intent;
@@ -42,7 +42,7 @@ public class HomeItemTruyen extends RecyclerView.Adapter<HomeItemTruyen.HomeItem
     @Override
     public void onBindViewHolder(@NonNull HomeItemTruyenHolder holder, int position) {
         TruyenTranh truyenTranh = listTruyen.get(position);
-        List<Chap>list=getall_chap(truyenTranh.getIdTruyen(),sqLiteDAO1);
+        List<Chap>list=getall_chap(truyenTranh.getIdTruyen(),sqLite);
         holder.textName.setText(truyenTranh.getTenTruyen());
         holder.textChap.setText(list.get(list.size()-1).getTenChap());
         holder.imageViewAnh.setImageBitmap(Utils.getImage(truyenTranh.getImg()));

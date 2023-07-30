@@ -1,7 +1,7 @@
 package com.example.BTL_App_truyen_tranh.Activity.TheLoaiTruyen;
 
 import static com.example.BTL_App_truyen_tranh.SQL.TruyenTranh.gettruyentranhtl;
-import static com.example.BTL_App_truyen_tranh.Activity.Home.HomePage.sqLiteDAO1;
+import static com.example.BTL_App_truyen_tranh.Activity.Home.HomePage.sqLite;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -42,7 +42,7 @@ public class TheLoaiTruyen extends AppCompatActivity {
             //Chuyền Layout Manager cho list_item_truyen
             list_item_truyen.setLayoutManager(gridLayoutManager);
             //Khởi tạo HomeItemTruyen
-            HomeItemTruyen homeItemTruyen = new HomeItemTruyen(gettruyentranhtl(intent.getStringExtra("Key_tentheloai"), sqLiteDAO1), this);
+            HomeItemTruyen homeItemTruyen = new HomeItemTruyen(gettruyentranhtl(intent.getStringExtra("Key_tentheloai"), sqLite), this);
             //Chuyền adapter cho list_item_truyen
             list_item_truyen.setAdapter(homeItemTruyen);
         }

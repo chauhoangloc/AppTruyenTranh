@@ -26,8 +26,8 @@ public class SQLite extends SQLiteOpenHelper {
 
     public void getdatatk() {
         get_data("create Table IF NOT EXISTS taikhoan(idtk INTEGER PRIMARY KEY AUTOINCREMENT,tk nvarchar(50), hoten nvarchar(50),mk nvarchar(50),role INTEGER)");
-        get_data("INSERT INTO taikhoan (tk, hoten, mk, role) VALUES ('admin', 'admin', 'admin', 1)");
-        get_data("INSERT INTO taikhoan (tk, hoten, mk, role) VALUES ('test1', 'test1', 'test1', 2)");
+       /* get_data("INSERT INTO taikhoan (tk, hoten, mk, role) VALUES ('admin', 'admin', 'admin', 1)");*/
+        /*(get_data("INSERT INTO taikhoan (tk, hoten, mk, role) VALUES ('test1', 'test1', 'test1', 2)");*/
     }
     public void getdatatkieuTruyen() {
         get_data("CREATE TABLE IF NOT EXISTS KieuTruyen(idkt INTEGER PRIMARY KEY AUTOINCREMENT,namekt TEXT)");
@@ -40,9 +40,9 @@ public class SQLite extends SQLiteOpenHelper {
     }
     public void getdatatl() {
         get_data("CREATE TABLE IF NOT EXISTS theloai(idtl INTEGER PRIMARY KEY AUTOINCREMENT,tentl text)");
-        get_data("INSERT INTO theloai (tentl) VALUES ('ngôn tình')");
+       /* get_data("INSERT INTO theloai (tentl) VALUES ('ngôn tình')");
         get_data("INSERT INTO theloai (tentl) VALUES ('Chuyển Sinh')");
-        get_data("INSERT INTO theloai (tentl) VALUES ('Hài Hước')");
+        get_data("INSERT INTO theloai (tentl) VALUES ('Hài Hước')");*/
     }
 
     public void getdataTruyenTranh() {
